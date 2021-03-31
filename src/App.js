@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import Axios from "axios"
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
+import { BrowserRouter as Router, HashRouter ,Switch, Route, Link } from "react-router-dom"
 
 //toast
 import { ToastContainer } from 'react-toastify'
@@ -32,7 +32,7 @@ const App = () => {
 
     return (
 
-        <Router>
+        <HashRouter basename="/">
             <ToastContainer />
             <UserContext.Provider value={{ user, setUser }}>
                 <Header />
@@ -44,7 +44,7 @@ const App = () => {
                 </Switch>
                 <Footer />
             </UserContext.Provider>
-        </Router>
+        </HashRouter>
 
     );
 }
